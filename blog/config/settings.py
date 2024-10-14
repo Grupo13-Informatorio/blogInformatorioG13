@@ -33,6 +33,17 @@ ALLOWED_HOSTS = ['Infogrupo13.pythonanywhere.com']
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Infogrupo13$default',
+        'USER' : 'Infogrupo13',
+        'PASSWORD' : 'grupo13grupo13',
+        'HOST' : 'Infogrupo13.mysql.pythonanywhere-services.com',
+        'PORT' : '3306',
+    }
+}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'apps.comentario',
     'apps.articulo',
     'apps.usuario',
@@ -122,7 +133,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(os.path.dirname(BASE_DIR), 'static')]
 if not DEBUG:
-    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
